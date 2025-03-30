@@ -77,6 +77,11 @@ services:
     ${USE_BACKEND_NETWORK}    aliases:
     ${USE_BACKEND_NETWORK}      - digital
     ${USE_BACKEND_NETWORK}      - digital.docker.container
+    volumes:
+      - ../digitalprofile/:/code/
+      - ../digitalprofile/static/:/code/static/
+      - .vols/digital_media/:/code/media/
+      - ../digitalprofile/mime.types:/etc/mime.types
 
   digital_worker:
     ${USE_EXTRA_HOSTS}extra_hosts:
